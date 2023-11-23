@@ -1,5 +1,3 @@
-C:\Users\opilane\source\repos\Toodet_Dotskin\bin\Debug\AppData\Toodet_DB.mdf
-C:\Users\opilane\source\repos\Toodet_Dotskin\bin\Debug\AppData\Toodet_DB_log.ldf
 C:\Users\opilane\source\repos\Toodet_Dotskin\bin\Debug\Toodet_Dotskin.exe.config
 C:\Users\opilane\source\repos\Toodet_Dotskin\bin\Debug\Toodet_Dotskin.exe
 C:\Users\opilane\source\repos\Toodet_Dotskin\bin\Debug\Toodet_Dotskin.pdb

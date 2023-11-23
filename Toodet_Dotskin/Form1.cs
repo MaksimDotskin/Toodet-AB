@@ -13,7 +13,7 @@ namespace Toodet_Dotskin
 {
     public partial class Form1 : Form
     {
-        SqlConnection connect=new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\source\repos\Toodet_Dotskin\AppData\Toodet_DB.mdf;Integrated Security=True");
+        SqlConnection connect=new SqlConnection(@"Data Source=HP-CZC2349HTM;Initial Catalog=ABtoode;Integrated Security=True");
         SqlDataAdapter adapter_toode, adapter_kategooria;
         SqlCommand command;
 
@@ -23,7 +23,7 @@ namespace Toodet_Dotskin
             NaitaAndmed();
             NaitaKategooriaD();
             lisa_kat_butt.Click += Lisa_Kat_btn_click;
-            button_lisa.Click += Lisa_Toode_btn_click;
+            //button_lisa.Click += Lisa_Toode_btn_click;
 
 
         }
@@ -52,28 +52,42 @@ namespace Toodet_Dotskin
             Kat_box.Items.Clear();
             NaitaKategooriaD();
         }
-        public void Lisa_Toode_btn_click(object sender, EventArgs e)
-        {
-            command = new SqlCommand("insert into Toodetabel(ToodeNimetus,Kogus,Hind,Kategooriat) values(@tod_nim,@kogus,@hind,@kat)", connect);
-            connect.Open();
-            command.Parameters.AddWithValue("@tod_nim", textBox_toode.Text);
-  
-            command.Parameters.AddWithValue("@kogus", textBox_kogus.Text);
-  
-            command.Parameters.AddWithValue("@hind", textBox_hind.Text);
-      
-            command.Parameters.AddWithValue("@kat", Kat_box.Text);
-            command.ExecuteNonQuery();
-            connect.Close();
-            Kat_box.Items.Clear();
-            textBox_toode.Clear();
-            textBox_hind.Clear();
-            textBox_kogus.Clear();
-            InitializeComponent();
-            NaitaAndmed();
+        //public void Lisa_Toode_btn_click(object sender, EventArgs e)
+        //{
+        //    if (textBox_hind.Text.Trim() != string.Empty && textBox_toode.Text.Trim() != string.Empty && textBox_kogus.Text.Trim() != string.Empty)
+        //    {
+        //        try
+        //        {
 
 
-        }
+
+        //        command = new SqlCommand("insert into Toodetabel(ToodeNimetus,Kogus,Hind,Kategooriat) values(@tod_nim,@kogus,@hind,@kat)", connect);
+        //        connect.Open();
+        //        command.Parameters.AddWithValue("@tod_nim", textBox_toode.Text);
+
+        //        command.Parameters.AddWithValue("@kogus", textBox_kogus.Text);
+
+        //        command.Parameters.AddWithValue("@hind", textBox_hind.Text);
+
+        //        command.Parameters.AddWithValue("@kat", Kat_box.Text);
+        //        command.ExecuteNonQuery();
+        //        connect.Close();
+        //        Kat_box.Items.Clear();
+        //        textBox_toode.Clear();
+        //        textBox_hind.Clear();
+        //        textBox_kogus.Clear();
+        //        InitializeComponent();
+        //        NaitaAndmed();
+        //        }
+        //        catch (Exception)
+        //        {
+
+        //            MessageBox.Show("Andmebaasiga viga!");
+        //        }
+        //    }
+
+
+        //}
 
 
         private void Kat_box_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,6 +126,39 @@ namespace Toodet_Dotskin
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox_hind.Text.Trim() != string.Empty && textBox_toode.Text.Trim() != string.Empty && textBox_kogus.Text.Trim() != string.Empty&&Kat_box.SelectedItem!=null)
+            {
+                try
+                {
+
+
+
+                    command = new SqlCommand("insert into Toodetabel(ToodeNimetus,Kogus,Hind,Pilt,Kategooriat) values(@tod_nim,@kogus,@hind,@pilt,@kat)", connect);
+                    connect.Open();
+                    command.Parameters.AddWithValue("@tod_nim", textBox_toode.Text);
+
+                    command.Parameters.AddWithValue("@kogus", textBox_kogus.Text);
+
+                    command.Parameters.AddWithValue("@hind", textBox_hind.Text);
+
+                    command.Parameters.AddWithValue("@pilt", textBox_hind.Text+".jpg");
+
+                    command.Parameters.AddWithValue("@kat", Kat_box.SelectedIndex+1);//id?!!!!!!!!!!!
+                    command.ExecuteNonQuery();
+                    connect.Close();
+
+                    NaitaAndmed();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Andmebaasiga viga!");
+                }
+            }
+        }
+
+        private void button_Kustuta_Click(object sender, EventArgs e)
         {
 
         }

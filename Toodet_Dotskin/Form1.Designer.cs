@@ -156,6 +156,7 @@
             this.button_Kustuta.TabIndex = 19;
             this.button_Kustuta.Text = "Kustuta";
             this.button_Kustuta.UseVisualStyleBackColor = true;
+            this.button_Kustuta.Click += new System.EventHandler(this.button_Kustuta_Click);
             // 
             // Form1
             // 

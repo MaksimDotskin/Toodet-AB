@@ -96,11 +96,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppData\Toodet_DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="AppData\Toodet_DB.mdf" />
     <Content Include="AppData\Toodet_DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Toodet_DB.mdf</DependentUpon>
     </Content>
   </ItemGroup>
