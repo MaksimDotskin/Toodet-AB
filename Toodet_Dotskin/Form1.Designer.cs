@@ -41,7 +41,13 @@
             this.button_lisa = new System.Windows.Forms.Button();
             this.button_Uuenda = new System.Windows.Forms.Button();
             this.button_Kustuta = new System.Windows.Forms.Button();
+            this.textBox_id = new System.Windows.Forms.TextBox();
+            this.pictureBox_Toode = new System.Windows.Forms.PictureBox();
+            this.otsi_file_button = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button_eemalda = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Toode)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -51,6 +57,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 150);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // Kat_box
             // 
@@ -131,7 +139,7 @@
             // 
             // button_lisa
             // 
-            this.button_lisa.Location = new System.Drawing.Point(416, 261);
+            this.button_lisa.Location = new System.Drawing.Point(231, 261);
             this.button_lisa.Name = "button_lisa";
             this.button_lisa.Size = new System.Drawing.Size(120, 21);
             this.button_lisa.TabIndex = 17;
@@ -141,12 +149,13 @@
             // 
             // button_Uuenda
             // 
-            this.button_Uuenda.Location = new System.Drawing.Point(542, 261);
+            this.button_Uuenda.Location = new System.Drawing.Point(668, 233);
             this.button_Uuenda.Name = "button_Uuenda";
             this.button_Uuenda.Size = new System.Drawing.Size(120, 21);
             this.button_Uuenda.TabIndex = 18;
             this.button_Uuenda.Text = "Uuenda";
             this.button_Uuenda.UseVisualStyleBackColor = true;
+            this.button_Uuenda.Click += new System.EventHandler(this.button_Uuenda_Click);
             // 
             // button_Kustuta
             // 
@@ -158,11 +167,62 @@
             this.button_Kustuta.UseVisualStyleBackColor = true;
             this.button_Kustuta.Click += new System.EventHandler(this.button_Kustuta_Click);
             // 
+            // textBox_id
+            // 
+            this.textBox_id.Location = new System.Drawing.Point(668, 207);
+            this.textBox_id.Name = "textBox_id";
+            this.textBox_id.Size = new System.Drawing.Size(21, 20);
+            this.textBox_id.TabIndex = 20;
+            // 
+            // pictureBox_Toode
+            // 
+            this.pictureBox_Toode.Location = new System.Drawing.Point(409, 154);
+            this.pictureBox_Toode.Name = "pictureBox_Toode";
+            this.pictureBox_Toode.Size = new System.Drawing.Size(195, 125);
+            this.pictureBox_Toode.TabIndex = 21;
+            this.pictureBox_Toode.TabStop = false;
+            this.pictureBox_Toode.Click += new System.EventHandler(this.pictureBox_Toode_Click);
+            // 
+            // otsi_file_button
+            // 
+            this.otsi_file_button.Location = new System.Drawing.Point(409, 127);
+            this.otsi_file_button.Name = "otsi_file_button";
+            this.otsi_file_button.Size = new System.Drawing.Size(120, 21);
+            this.otsi_file_button.TabIndex = 22;
+            this.otsi_file_button.Text = "Otsi fail";
+            this.otsi_file_button.UseVisualStyleBackColor = true;
+            this.otsi_file_button.Click += new System.EventHandler(this.otsi_file_button_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(643, 214);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Id:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // button_eemalda
+            // 
+            this.button_eemalda.Location = new System.Drawing.Point(15, 37);
+            this.button_eemalda.Name = "button_eemalda";
+            this.button_eemalda.Size = new System.Drawing.Size(120, 21);
+            this.button_eemalda.TabIndex = 24;
+            this.button_eemalda.Text = "Eemalda";
+            this.button_eemalda.UseVisualStyleBackColor = true;
+            this.button_eemalda.Click += new System.EventHandler(this.button_eemalda_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button_eemalda);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.otsi_file_button);
+            this.Controls.Add(this.pictureBox_Toode);
+            this.Controls.Add(this.textBox_id);
             this.Controls.Add(this.button_Kustuta);
             this.Controls.Add(this.button_Uuenda);
             this.Controls.Add(this.button_lisa);
@@ -179,6 +239,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Toode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,6 +260,11 @@
         private System.Windows.Forms.Button button_lisa;
         private System.Windows.Forms.Button button_Uuenda;
         private System.Windows.Forms.Button button_Kustuta;
+        private System.Windows.Forms.TextBox textBox_id;
+        private System.Windows.Forms.PictureBox pictureBox_Toode;
+        private System.Windows.Forms.Button otsi_file_button;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_eemalda;
     }
 }
 
