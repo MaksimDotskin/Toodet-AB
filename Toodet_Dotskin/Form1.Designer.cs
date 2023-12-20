@@ -41,11 +41,10 @@
             this.button_lisa = new System.Windows.Forms.Button();
             this.button_Uuenda = new System.Windows.Forms.Button();
             this.button_Kustuta = new System.Windows.Forms.Button();
-            this.textBox_id = new System.Windows.Forms.TextBox();
             this.pictureBox_Toode = new System.Windows.Forms.PictureBox();
             this.otsi_file_button = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.button_eemalda = new System.Windows.Forms.Button();
+            this.kust_kat_butt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Toode)).BeginInit();
             this.SuspendLayout();
@@ -87,6 +86,7 @@
             this.lisa_kat_butt.TabIndex = 3;
             this.lisa_kat_butt.Text = "Lisa kategooriat";
             this.lisa_kat_butt.UseVisualStyleBackColor = true;
+            this.lisa_kat_butt.Click += new System.EventHandler(this.lisa_kat_butt_Click);
             // 
             // label_hind
             // 
@@ -167,13 +167,6 @@
             this.button_Kustuta.UseVisualStyleBackColor = true;
             this.button_Kustuta.Click += new System.EventHandler(this.button_Kustuta_Click);
             // 
-            // textBox_id
-            // 
-            this.textBox_id.Location = new System.Drawing.Point(668, 207);
-            this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(21, 20);
-            this.textBox_id.TabIndex = 20;
-            // 
             // pictureBox_Toode
             // 
             this.pictureBox_Toode.Location = new System.Drawing.Point(409, 154);
@@ -193,16 +186,6 @@
             this.otsi_file_button.UseVisualStyleBackColor = true;
             this.otsi_file_button.Click += new System.EventHandler(this.otsi_file_button_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(643, 214);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 13);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Id:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // button_eemalda
             // 
             this.button_eemalda.Location = new System.Drawing.Point(15, 37);
@@ -213,16 +196,25 @@
             this.button_eemalda.UseVisualStyleBackColor = true;
             this.button_eemalda.Click += new System.EventHandler(this.button_eemalda_Click);
             // 
+            // kust_kat_butt
+            // 
+            this.kust_kat_butt.Location = new System.Drawing.Point(231, 207);
+            this.kust_kat_butt.Name = "kust_kat_butt";
+            this.kust_kat_butt.Size = new System.Drawing.Size(120, 21);
+            this.kust_kat_butt.TabIndex = 25;
+            this.kust_kat_butt.Text = "Kustuta kategooriat";
+            this.kust_kat_butt.UseVisualStyleBackColor = true;
+            this.kust_kat_butt.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.kust_kat_butt);
             this.Controls.Add(this.button_eemalda);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.otsi_file_button);
             this.Controls.Add(this.pictureBox_Toode);
-            this.Controls.Add(this.textBox_id);
             this.Controls.Add(this.button_Kustuta);
             this.Controls.Add(this.button_Uuenda);
             this.Controls.Add(this.button_lisa);
@@ -260,11 +252,10 @@
         private System.Windows.Forms.Button button_lisa;
         private System.Windows.Forms.Button button_Uuenda;
         private System.Windows.Forms.Button button_Kustuta;
-        private System.Windows.Forms.TextBox textBox_id;
         private System.Windows.Forms.PictureBox pictureBox_Toode;
         private System.Windows.Forms.Button otsi_file_button;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_eemalda;
+        private System.Windows.Forms.Button kust_kat_butt;
     }
 }
 
