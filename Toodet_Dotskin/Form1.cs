@@ -15,7 +15,7 @@ namespace Toodet_Dotskin
 {
     public partial class Form1 : Form
     {
-        SqlConnection connect=new SqlConnection(@"Data Source=HP-CZC2349HTM;Initial Catalog=ABtoode;Integrated Security=True");
+        SqlConnection connect=new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\AppData\Toodet_DB.mdf;Integrated Security=True");
         SqlDataAdapter adapter_toode, adapter_kategooria,adapter_pilt;
         SqlCommand command;
         OpenFileDialog open;
