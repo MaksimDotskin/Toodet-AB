@@ -35,7 +35,6 @@
             this.listBoxToodet = new System.Windows.Forms.ListBox();
             this.Kat_box = new System.Windows.Forms.ComboBox();
             this.btnOstukorvile = new System.Windows.Forms.Button();
-            this.btnOstukorvist = new System.Windows.Forms.Button();
             this.btnMaksma = new System.Windows.Forms.Button();
             this.btnToode = new System.Windows.Forms.Button();
             this.lblSumma = new System.Windows.Forms.Label();
@@ -43,6 +42,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblTervitamine = new System.Windows.Forms.Label();
             this.listBoxOstukorv = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonArvuta = new System.Windows.Forms.Button();
+            this.labellll = new System.Windows.Forms.Label();
+            this.labelHind = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +87,7 @@
             this.listBoxToodet.Name = "listBoxToodet";
             this.listBoxToodet.Size = new System.Drawing.Size(264, 212);
             this.listBoxToodet.TabIndex = 23;
+            this.listBoxToodet.SelectedIndexChanged += new System.EventHandler(this.listBoxToodet_SelectedIndexChanged);
             // 
             // Kat_box
             // 
@@ -103,16 +107,6 @@
             this.btnOstukorvile.Text = ">";
             this.btnOstukorvile.UseVisualStyleBackColor = true;
             this.btnOstukorvile.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnOstukorvist
-            // 
-            this.btnOstukorvist.Location = new System.Drawing.Point(348, 197);
-            this.btnOstukorvist.Name = "btnOstukorvist";
-            this.btnOstukorvist.Size = new System.Drawing.Size(75, 23);
-            this.btnOstukorvist.TabIndex = 27;
-            this.btnOstukorvist.Text = "<";
-            this.btnOstukorvist.UseVisualStyleBackColor = true;
-            this.btnOstukorvist.Click += new System.EventHandler(this.btnOstukorvist_Click);
             // 
             // btnMaksma
             // 
@@ -177,11 +171,55 @@
             this.listBoxOstukorv.Size = new System.Drawing.Size(264, 212);
             this.listBoxOstukorv.TabIndex = 37;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(348, 187);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "<";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // buttonArvuta
+            // 
+            this.buttonArvuta.Location = new System.Drawing.Point(280, 377);
+            this.buttonArvuta.Name = "buttonArvuta";
+            this.buttonArvuta.Size = new System.Drawing.Size(59, 23);
+            this.buttonArvuta.TabIndex = 39;
+            this.buttonArvuta.Text = "Arvuta";
+            this.buttonArvuta.UseVisualStyleBackColor = true;
+            this.buttonArvuta.Click += new System.EventHandler(this.buttonArvuta_Click);
+            // 
+            // labellll
+            // 
+            this.labellll.AutoSize = true;
+            this.labellll.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.labellll.Location = new System.Drawing.Point(282, 213);
+            this.labellll.Name = "labellll";
+            this.labellll.Size = new System.Drawing.Size(57, 26);
+            this.labellll.TabIndex = 40;
+            this.labellll.Text = "Hind";
+            this.labellll.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // labelHind
+            // 
+            this.labelHind.AutoSize = true;
+            this.labelHind.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.labelHind.Location = new System.Drawing.Point(345, 215);
+            this.labelHind.Name = "labelHind";
+            this.labelHind.Size = new System.Drawing.Size(0, 26);
+            this.labelHind.TabIndex = 41;
+            // 
             // Kaasa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelHind);
+            this.Controls.Add(this.labellll);
+            this.Controls.Add(this.buttonArvuta);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listBoxOstukorv);
             this.Controls.Add(this.lblTervitamine);
             this.Controls.Add(this.label6);
@@ -189,7 +227,6 @@
             this.Controls.Add(this.lblSumma);
             this.Controls.Add(this.btnToode);
             this.Controls.Add(this.btnMaksma);
-            this.Controls.Add(this.btnOstukorvist);
             this.Controls.Add(this.btnOstukorvile);
             this.Controls.Add(this.Kat_box);
             this.Controls.Add(this.listBoxToodet);
@@ -198,6 +235,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Kaasa";
             this.Text = "Kaasa";
+            this.Load += new System.EventHandler(this.Kaasa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,7 +251,6 @@
         private System.Windows.Forms.ListBox listBoxToodet;
         private System.Windows.Forms.ComboBox Kat_box;
         private System.Windows.Forms.Button btnOstukorvile;
-        private System.Windows.Forms.Button btnOstukorvist;
         private System.Windows.Forms.Button btnMaksma;
         private System.Windows.Forms.Button btnToode;
         private System.Windows.Forms.Label lblSumma;
@@ -221,5 +258,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTervitamine;
         private System.Windows.Forms.ListBox listBoxOstukorv;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonArvuta;
+        private System.Windows.Forms.Label labellll;
+        private System.Windows.Forms.Label labelHind;
     }
 }
