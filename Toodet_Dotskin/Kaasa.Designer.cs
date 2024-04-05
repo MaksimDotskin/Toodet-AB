@@ -50,13 +50,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelKogus2 = new System.Windows.Forms.Label();
+            this.pictureBox_Toode = new System.Windows.Forms.PictureBox();
+            this.mainPB = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Toode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainPB)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label1.Location = new System.Drawing.Point(332, 9);
+            this.label1.Location = new System.Drawing.Point(676, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 39);
             this.label1.TabIndex = 1;
@@ -66,7 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Location = new System.Drawing.Point(12, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 26);
             this.label2.TabIndex = 9;
@@ -77,7 +81,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label3.Location = new System.Drawing.Point(689, 44);
+            this.label3.Location = new System.Drawing.Point(689, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 26);
             this.label3.TabIndex = 10;
@@ -88,14 +92,14 @@
             this.listBoxToodet.FormattingEnabled = true;
             this.listBoxToodet.Location = new System.Drawing.Point(12, 158);
             this.listBoxToodet.Name = "listBoxToodet";
-            this.listBoxToodet.Size = new System.Drawing.Size(264, 212);
+            this.listBoxToodet.Size = new System.Drawing.Size(260, 121);
             this.listBoxToodet.TabIndex = 23;
             this.listBoxToodet.SelectedIndexChanged += new System.EventHandler(this.listBoxToodet_SelectedIndexChanged);
             // 
             // Kat_box
             // 
             this.Kat_box.FormattingEnabled = true;
-            this.Kat_box.Location = new System.Drawing.Point(17, 89);
+            this.Kat_box.Location = new System.Drawing.Point(96, 131);
             this.Kat_box.Name = "Kat_box";
             this.Kat_box.Size = new System.Drawing.Size(120, 21);
             this.Kat_box.TabIndex = 25;
@@ -103,7 +107,7 @@
             // 
             // btnOstukorvile
             // 
-            this.btnOstukorvile.Location = new System.Drawing.Point(348, 158);
+            this.btnOstukorvile.Location = new System.Drawing.Point(427, 158);
             this.btnOstukorvile.Name = "btnOstukorvile";
             this.btnOstukorvile.Size = new System.Drawing.Size(75, 23);
             this.btnOstukorvile.TabIndex = 26;
@@ -123,7 +127,7 @@
             // 
             // btnToode
             // 
-            this.btnToode.Location = new System.Drawing.Point(17, 415);
+            this.btnToode.Location = new System.Drawing.Point(12, 99);
             this.btnToode.Name = "btnToode";
             this.btnToode.Size = new System.Drawing.Size(145, 23);
             this.btnToode.TabIndex = 31;
@@ -164,12 +168,12 @@
             this.listBoxOstukorv.FormattingEnabled = true;
             this.listBoxOstukorv.Location = new System.Drawing.Point(524, 158);
             this.listBoxOstukorv.Name = "listBoxOstukorv";
-            this.listBoxOstukorv.Size = new System.Drawing.Size(264, 212);
+            this.listBoxOstukorv.Size = new System.Drawing.Size(264, 121);
             this.listBoxOstukorv.TabIndex = 37;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(348, 187);
+            this.button1.Location = new System.Drawing.Point(295, 158);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 38;
@@ -179,7 +183,7 @@
             // 
             // buttonArvuta
             // 
-            this.buttonArvuta.Location = new System.Drawing.Point(280, 377);
+            this.buttonArvuta.Location = new System.Drawing.Point(350, 347);
             this.buttonArvuta.Name = "buttonArvuta";
             this.buttonArvuta.Size = new System.Drawing.Size(59, 23);
             this.buttonArvuta.TabIndex = 39;
@@ -191,7 +195,7 @@
             // 
             this.labellll.AutoSize = true;
             this.labellll.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.labellll.Location = new System.Drawing.Point(282, 213);
+            this.labellll.Location = new System.Drawing.Point(275, 215);
             this.labellll.Name = "labellll";
             this.labellll.Size = new System.Drawing.Size(57, 26);
             this.labellll.TabIndex = 40;
@@ -209,11 +213,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(17, 386);
+            this.button2.Location = new System.Drawing.Point(12, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(145, 23);
             this.button2.TabIndex = 42;
-            this.button2.Text = "Klientid";
+            this.button2.Text = "Kliendid";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -240,7 +244,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.label5.Location = new System.Drawing.Point(282, 268);
+            this.label5.Location = new System.Drawing.Point(275, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 26);
             this.label5.TabIndex = 45;
@@ -256,11 +260,29 @@
             this.labelKogus2.Size = new System.Drawing.Size(0, 26);
             this.labelKogus2.TabIndex = 46;
             // 
+            // pictureBox_Toode
+            // 
+            this.pictureBox_Toode.Location = new System.Drawing.Point(12, 302);
+            this.pictureBox_Toode.Name = "pictureBox_Toode";
+            this.pictureBox_Toode.Size = new System.Drawing.Size(260, 136);
+            this.pictureBox_Toode.TabIndex = 47;
+            this.pictureBox_Toode.TabStop = false;
+            // 
+            // mainPB
+            // 
+            this.mainPB.Location = new System.Drawing.Point(233, 4);
+            this.mainPB.Name = "mainPB";
+            this.mainPB.Size = new System.Drawing.Size(357, 147);
+            this.mainPB.TabIndex = 49;
+            this.mainPB.TabStop = false;
+            // 
             // Kaasa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.mainPB);
+            this.Controls.Add(this.pictureBox_Toode);
             this.Controls.Add(this.labelKogus2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -285,6 +307,8 @@
             this.Name = "Kaasa";
             this.Text = "Kaasa";
             this.Load += new System.EventHandler(this.Kaasa_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Toode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainPB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +338,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelKogus2;
+        private System.Windows.Forms.PictureBox pictureBox_Toode;
+        private System.Windows.Forms.PictureBox mainPB;
     }
 }

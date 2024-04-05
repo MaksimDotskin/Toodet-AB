@@ -1,32 +1,56 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Windows.Forms; // Добавляем пространство имен для работы с Windows Forms
 
 namespace Toodet_Dotskin
 {
     internal class Kvitung
     {
-        public Kvitung(string productName, double price, string folderPath)
+        private List<string> toodet;
+        private List<int> hinnad;
+        private int summa;
+
+        public Kvitung(List<string> Toodet, List<int> Hinnad, int Summa)
         {
-            string checkContent = $"Товар: {productName}\nЦена: {price}";
+            toodet = Toodet;
+            hinnad = Hinnad;
+            summa = Summa;
+
+            string kaustatee = @"C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\arved\";
+            string failiNime = $"Check_{DateTime.Now:yyyyMMddHHmmss}.txt";
+            string failiTee = Path.Combine(kaustatee, failiNime);
 
             try
             {
-                // Создаем уникальное имя для файла на основе текущей даты и времени
-                string fileName = $"Check_{DateTime.Now:yyyyMMddHHmmss}.txt";
+                if (!Directory.Exists(kaustatee))
+                {
+                    Directory.CreateDirectory(kaustatee);
+                }
 
-                // Полный путь к файлу
-                string filePath = Path.Combine(folderPath, fileName);
-
-                // Записываем чек в файл
-                File.WriteAllText(filePath, checkContent);
-
-                Console.WriteLine($"Чек успешно создан и сохранен в файл: {filePath}");
+                using (StreamWriter kirjutaja = new StreamWriter(failiTee))
+                {
+                    kirjutaja.WriteLine("=====================================");
+                    kirjutaja.WriteLine("|           Ostutšekk               |");
+                    kirjutaja.WriteLine("=====================================");
+                    kirjutaja.WriteLine("| Toode        |      Hind       |");
+                    kirjutaja.WriteLine("|--------------|-----------------|");
+                    for (int i = 0; i < toodet.Count; i++)
+                    {
+                        kirjutaja.WriteLine($"| {toodet[i],-12} | {hinnad[i],14:f2} |");
+                        summa += hinnad[i];
+                    }
+                    kirjutaja.WriteLine("=====================================");
+                    kirjutaja.WriteLine($"|{"Kokku:",-12} | {summa,14:f2} |");
+                    kirjutaja.WriteLine("=====================================");
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Ошибка при создании чека и сохранении файла: {ex.Message}");
+                Console.WriteLine($"Произошла ошибка: {ex.Message}");
             }
+
+            
+            Tsekk tsekk = new Tsekk("C:\\Users\\opilane\\Source\\Repos\\Toodet-AB\\Toodet_Dotskin\\arved\\"+failiNime,failiNime);
         }
     }
 }

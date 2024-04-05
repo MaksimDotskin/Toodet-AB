@@ -10,6 +10,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace Toodet_Dotskin
 {
@@ -48,6 +49,8 @@ namespace Toodet_Dotskin
                 // Вывод сообщения о незаполненных полях
                 MessageBox.Show("Palun sisestaqe", "Tühjed väljed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            NaitaKasutajad();
+
         }
 
 
@@ -75,7 +78,32 @@ namespace Toodet_Dotskin
                 dgwKas.DataSource = dt_kas;
             }
         }
-        
 
+        private void dgwKas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            textBox1.Text = dgwKas.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\AppData\Toodet_DB.mdf;Integrated Security=True");
+            try
+            {
+                int id;
+                int.TryParse(textBox1.Text, out id);              
+                connect.Open();
+                SqlCommand command2 = new SqlCommand("update Kasutajatabel set rool=1 where Id="+id, connect);
+
+                command2.ExecuteNonQuery();
+            }
+            finally
+            {
+                connect.Close();
+            }
+            MessageBox.Show("Lasutaja on tehtud omaniku");
+            NaitaKasutajad();
+
+        }
     }
 }

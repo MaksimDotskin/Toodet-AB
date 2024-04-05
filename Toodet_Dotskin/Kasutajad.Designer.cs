@@ -45,6 +45,7 @@
             this.dgwKas.Name = "dgwKas";
             this.dgwKas.Size = new System.Drawing.Size(776, 150);
             this.dgwKas.TabIndex = 1;
+            this.dgwKas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgwKas_RowHeaderMouseClick);
             // 
             // button1
             // 
@@ -64,6 +65,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Teha omanik";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 

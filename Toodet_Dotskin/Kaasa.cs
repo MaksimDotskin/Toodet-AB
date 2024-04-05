@@ -38,6 +38,10 @@ namespace Toodet_Dotskin
 
 
             InitializeComponent();
+            mainPB.Image= Image.FromFile(@"..\..\pildid\ePood.png");
+
+
+
             nimi = Nimi;
             isOmanik = IsOmanik;
             kasutajaId= kasId;
@@ -56,10 +60,12 @@ namespace Toodet_Dotskin
             if (isOmanik)
             {
                 btnToode.Visible = true;
+                button2.Visible = true;
             }
             else
             {
                 btnToode.Visible = false;
+                button2.Visible = false;
 
             }
             NaitaAndmed();
@@ -195,13 +201,18 @@ namespace Toodet_Dotskin
                 form1.ShowDialog();
             }
 
+
+
+
+
+
+
         private void Kat_box_SelectedIndexChanged(object sender, EventArgs e)
         {
             connect.Open();
             List<string> toodeNimetusList = new List<string>();
 
-            int id = Kat_box.SelectedIndex + 1;
-            // Создание команды для выполнения запроса
+            int id = Kat_box.SelectedIndex + 12;
             SqlCommand command = new SqlCommand("SELECT ToodeNimetus,Kogus FROM Toodetabel where Kategooriat=" + id, connect);
 
             SqlDataReader reader = command.ExecuteReader();
@@ -226,6 +237,7 @@ namespace Toodet_Dotskin
                 listBoxToodet.Items.Add(item);
             }
         }
+
 
 
 
@@ -255,10 +267,10 @@ namespace Toodet_Dotskin
 
         private void listBoxToodet_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxToodet.SelectedItem != null) // Проверяем, выбран ли какой-то элемент
+            if (listBoxToodet.SelectedItem != null) 
             {
                 connect.Open();
-                SqlCommand command1 = new SqlCommand("SELECT Hind,Kogus FROM Toodetabel WHERE ToodeNimetus = @item", connect);
+                SqlCommand command1 = new SqlCommand("SELECT Hind,Kogus,Pilt FROM Toodetabel WHERE ToodeNimetus = @item", connect);
                 command1.Parameters.AddWithValue("@item", listBoxToodet.SelectedItem.ToString()); // Преобразуем выбранный элемент в строку и передаем его как параметр
                 SqlDataReader reader = command1.ExecuteReader();
 
@@ -271,6 +283,26 @@ namespace Toodet_Dotskin
                         labelKogus2.Text = reader["Kogus"].ToString();
 
                     }
+
+                    if (reader["Pilt"].ToString() != "")
+                    {
+                        try
+                        {
+                            pictureBox_Toode.Image = Image.FromFile(@"..\..\pildid\" + reader["Pilt"].ToString());
+
+                        }
+                        catch (Exception)
+                        {
+                            pictureBox_Toode.Image = null;
+
+                        }
+                    }
+                    else
+                    {
+                        pictureBox_Toode.Image = null;
+                    }
+
+
                 }
 
                 reader.Close();
@@ -307,11 +339,42 @@ namespace Toodet_Dotskin
 
         private void btnMaksma_Click(object sender, EventArgs e)
         {
+            calculateSum();
+
+            List<string> Toodet = new List<string>();
+            List<int> Hinnad = new List<int>();
 
 
 
 
-            // Проходим по каждому товару в корзине
+
+            foreach (string item in listBoxOstukorv.Items)
+            {
+                connect.Open();
+                SqlCommand command1 = new SqlCommand("SELECT Hind FROM Toodetabel WHERE ToodeNimetus = @item", connect);
+                command1.Parameters.AddWithValue("@item", item);
+                SqlDataReader reader = command1.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int hind;
+                    if (int.TryParse(reader["Hind"].ToString(), out hind))
+                    {
+                        Hinnad.Add(hind);
+                    }
+                }
+
+                reader.Close();
+                connect.Close();
+
+                Toodet.Add(item.ToString());
+            }
+
+            int Summa;
+            int.TryParse(lblSumma.Text, out Summa);
+
+            Kvitung kvitung = new Kvitung(Toodet, Hinnad, Summa);
+
             foreach (var item in listBoxOstukorv.Items)
             {
                 // Удаляем товар из базы данных и передаем его название и количество
@@ -319,8 +382,11 @@ namespace Toodet_Dotskin
             }
 
             listBoxOstukorv.Items.Clear();
+
+
         }
-       
+
+
 
         private void RemoveProductFromDatabase(string productName, int quantity)
         {
