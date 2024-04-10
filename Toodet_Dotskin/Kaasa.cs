@@ -212,7 +212,7 @@ namespace Toodet_Dotskin
             connect.Open();
             List<string> toodeNimetusList = new List<string>();
 
-            int id = Kat_box.SelectedIndex + 12;
+            int id = Kat_box.SelectedIndex + 1;
             SqlCommand command = new SqlCommand("SELECT ToodeNimetus,Kogus FROM Toodetabel where Kategooriat=" + id, connect);
 
             SqlDataReader reader = command.ExecuteReader();

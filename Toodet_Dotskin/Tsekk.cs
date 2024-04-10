@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
+using System.Diagnostics;
 
 namespace Toodet_Dotskin
 {
     public partial class Tsekk : Form
     {
 
-        string path;
+        string path,nimi;
         public Tsekk(string filePath , string nim)
         {
 
@@ -24,10 +25,14 @@ namespace Toodet_Dotskin
 
             DateTime aeg = DateTime.Now;
 
-            labelAeg.Text = aeg.ToString();
+            aeglbl.Text = aeg.ToString();
 
 
             path = filePath;
+
+            nimi = nim;
+
+            button1Fail.Text = nimi;
 
 
 
@@ -35,7 +40,7 @@ namespace Toodet_Dotskin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(path);
+            Process.Start(path);
         }
     }
 }

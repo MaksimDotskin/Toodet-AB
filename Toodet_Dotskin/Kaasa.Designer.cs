@@ -52,6 +52,7 @@
             this.labelKogus2 = new System.Windows.Forms.Label();
             this.pictureBox_Toode = new System.Windows.Forms.PictureBox();
             this.mainPB = new System.Windows.Forms.PictureBox();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Toode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainPB)).BeginInit();
             this.SuspendLayout();
@@ -276,11 +277,20 @@
             this.mainPB.TabIndex = 49;
             this.mainPB.TabStop = false;
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(704, 37);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.TabIndex = 50;
+            // 
             // Kaasa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.mainPB);
             this.Controls.Add(this.pictureBox_Toode);
             this.Controls.Add(this.labelKogus2);
@@ -340,5 +350,6 @@
         private System.Windows.Forms.Label labelKogus2;
         private System.Windows.Forms.PictureBox pictureBox_Toode;
         private System.Windows.Forms.PictureBox mainPB;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }

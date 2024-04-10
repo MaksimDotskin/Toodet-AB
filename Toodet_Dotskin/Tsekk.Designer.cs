@@ -31,10 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button1Fail = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.labelNim = new System.Windows.Forms.Label();
-            this.labelAeg = new System.Windows.Forms.Label();
+            this.aeglbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -67,15 +66,15 @@
             this.label4.TabIndex = 13;
             this.label4.Text = "Tähtaeg";
             // 
-            // button1
+            // button1Fail
             // 
-            this.button1.Location = new System.Drawing.Point(285, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 22);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Fail";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1Fail.Location = new System.Drawing.Point(285, 194);
+            this.button1Fail.Name = "button1Fail";
+            this.button1Fail.Size = new System.Drawing.Size(118, 22);
+            this.button1Fail.TabIndex = 14;
+            this.button1Fail.Text = "Fail";
+            this.button1Fail.UseVisualStyleBackColor = true;
+            this.button1Fail.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -87,33 +86,24 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Vaata tsekki:";
             // 
-            // labelNim
+            // aeglbl
             // 
-            this.labelNim.AutoSize = true;
-            this.labelNim.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.labelNim.Location = new System.Drawing.Point(280, 102);
-            this.labelNim.Name = "labelNim";
-            this.labelNim.Size = new System.Drawing.Size(0, 26);
-            this.labelNim.TabIndex = 16;
-            // 
-            // labelAeg
-            // 
-            this.labelAeg.AutoSize = true;
-            this.labelAeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
-            this.labelAeg.Location = new System.Drawing.Point(280, 149);
-            this.labelAeg.Name = "labelAeg";
-            this.labelAeg.Size = new System.Drawing.Size(0, 26);
-            this.labelAeg.TabIndex = 17;
+            this.aeglbl.AutoSize = true;
+            this.aeglbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
+            this.aeglbl.Location = new System.Drawing.Point(262, 149);
+            this.aeglbl.Name = "aeglbl";
+            this.aeglbl.Size = new System.Drawing.Size(18, 26);
+            this.aeglbl.TabIndex = 16;
+            this.aeglbl.Text = ".";
             // 
             // Tsekk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 458);
-            this.Controls.Add(this.labelAeg);
-            this.Controls.Add(this.labelNim);
+            this.Controls.Add(this.aeglbl);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button1Fail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -129,9 +119,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button1Fail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labelNim;
-        private System.Windows.Forms.Label labelAeg;
+        private System.Windows.Forms.Label aeglbl;
     }
 }

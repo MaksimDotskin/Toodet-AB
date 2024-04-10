@@ -14,7 +14,7 @@ namespace Toodet_Dotskin
         {
             toodet = Toodet;
             hinnad = Hinnad;
-            summa = Summa;
+            summa = 0; // Инициализация суммы
 
             string kaustatee = @"C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\arved\";
             string failiNime = $"Check_{DateTime.Now:yyyyMMddHHmmss}.txt";
@@ -49,8 +49,9 @@ namespace Toodet_Dotskin
                 Console.WriteLine($"Произошла ошибка: {ex.Message}");
             }
 
-            
-            Tsekk tsekk = new Tsekk("C:\\Users\\opilane\\Source\\Repos\\Toodet-AB\\Toodet_Dotskin\\arved\\"+failiNime,failiNime);
+            Tsekk tsekk = new Tsekk("C:\\Users\\opilane\\Source\\Repos\\Toodet-AB\\Toodet_Dotskin\\arved\\" + failiNime, failiNime);
+            tsekk.ShowDialog();
         }
+
     }
 }
