@@ -20,6 +20,9 @@ namespace Toodet_Dotskin
         public Tsekk(string filePath , string nim)
         {
 
+            
+
+
             InitializeComponent();
 
 

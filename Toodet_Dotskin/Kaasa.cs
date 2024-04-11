@@ -180,11 +180,6 @@ namespace Toodet_Dotskin
 
             
 
-            private void pictureBox_Toode_Click(object sender, EventArgs e)
-            {
-
-            }
-
             private void button1_Click(object sender, EventArgs e)
             {
                 listBoxOstukorv.BeginUpdate();
@@ -212,7 +207,7 @@ namespace Toodet_Dotskin
             connect.Open();
             List<string> toodeNimetusList = new List<string>();
 
-            int id = Kat_box.SelectedIndex + 1;
+            int id = Kat_box.SelectedIndex + 12;
             SqlCommand command = new SqlCommand("SELECT ToodeNimetus,Kogus FROM Toodetabel where Kategooriat=" + id, connect);
 
             SqlDataReader reader = command.ExecuteReader();
@@ -271,7 +266,7 @@ namespace Toodet_Dotskin
             {
                 connect.Open();
                 SqlCommand command1 = new SqlCommand("SELECT Hind,Kogus,Pilt FROM Toodetabel WHERE ToodeNimetus = @item", connect);
-                command1.Parameters.AddWithValue("@item", listBoxToodet.SelectedItem.ToString()); // Преобразуем выбранный элемент в строку и передаем его как параметр
+                command1.Parameters.AddWithValue("@item", listBoxToodet.SelectedItem.ToString()); 
                 SqlDataReader reader = command1.ExecuteReader();
 
                 while (reader.Read())
@@ -290,13 +285,13 @@ namespace Toodet_Dotskin
                         {
                             pictureBox_Toode.Image = Image.FromFile(@"..\..\pildid\" + reader["Pilt"].ToString());
 
-                        }
-                        catch (Exception)
-                        {
-                            pictureBox_Toode.Image = null;
-
-                        }
                     }
+                        catch (Exception)
+                    {
+                        pictureBox_Toode.Image = null;
+
+                    }
+                }
                     else
                     {
                         pictureBox_Toode.Image = null;
@@ -382,6 +377,10 @@ namespace Toodet_Dotskin
             }
 
             listBoxOstukorv.Items.Clear();
+
+
+
+
 
 
         }

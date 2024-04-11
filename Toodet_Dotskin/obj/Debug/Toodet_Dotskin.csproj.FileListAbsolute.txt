@@ -88,3 +88,5 @@ C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\bin\Debug\System.Runtime.
 C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\bin\Debug\System.ValueTuple.xml
 C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\obj\Debug\Toodet_Dotskin.csproj.CopyComplete
+C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\obj\Debug\Toodet_Dotskin.csproj.SuggestedBindingRedirects.cache
+C:\Users\opilane\Source\Repos\Toodet-AB\Toodet_Dotskin\obj\Debug\Toodet_Dotskin.Tsekk.resources

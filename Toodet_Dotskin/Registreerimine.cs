@@ -86,8 +86,8 @@ namespace Toodet_Dotskin
                     }
                 }
 
-                reader.Close(); // Закрываем читателя данных
-                connect.Close(); // Закрываем подключение к базе данных
+                reader.Close(); 
+                connect.Close(); 
             }
         }
 
